@@ -21,22 +21,19 @@ const steps = [
 ]
 
 
-const Stepper = ({ column }) => {
+const Stepper = () => {
   let [state, api] = useSequencer({ steps, endMode: 'loop' })
-  let currentBar = null
+
   return (
-    // console.log(state.current)
-    <>
-      {currentBar = state.current}
+    //console.log(state.current)
+
+    <div className="transport">
       <p>{state.current}</p>
-      <p>{column[state.current]}</p>
-      <>
-        <NoteArray currentBar={currentBar} />
-      </>
       <button onClick={() => {api.play()}}>Start</button>
       <button onClick={() => {api.pause()}}>Pause</button>
       <button onClick={() => {api.stop()}}>Stop</button>
-    </>
+      <NoteArray state={state.index} />
+    </div>
   )
 }
 

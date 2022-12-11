@@ -1,12 +1,14 @@
 import * as Tone from 'tone'
 import NoteArray from './components/Arrays'
+import Stepper from './components/Stepper'
 
 
 const App = () => {
 
 	return(
 		<div>
-			<NoteArray />
+			<Stepper />
+			{/* <NoteArray /> */}
 		</div>
 	)
 }

@@ -1,7 +1,6 @@
 import Notes from './Notes'
-import Stepper from './Stepper'
 
-const NoteArray = ({ currentBar }) => {
+const NoteArray = ({ state }) => {
     
 	const phrase = { 
 		grid: [ 
@@ -23,18 +22,19 @@ const NoteArray = ({ currentBar }) => {
 
 	return (
 		<>
-			<Stepper column={column} />
 			<div className="play-field">
 				{
 					column.map((bar, i) => {
 						return(
-							<div classname="column" bar={column[i]} style={{background:(column[i]===currentBar)?"lightyellow":"transparent"}}>
+							<div classname="column" bar={column[i]}>
 								{row.map((pitch) => {
 									return(
 										<div className="note" note={pitch}>
 											<Notes 
 												name={pitch}
 												id={bar + pitch}
+												state={state}
+												bar={bar}
 											/>
 										</div>
 									)

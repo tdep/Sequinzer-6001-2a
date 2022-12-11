@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-const Notes = ({ name, id, toggled}) => {
+const Notes = ({ name, id, state, bar }) => {
   const [onOff, setOnOff] = useState(false)
   const handleClick = (e) => {
     e.preventDefault()
     setOnOff(!onOff)
     console.log(e.target.attributes.name.value)
-    console.log(onOff)
+    console.log(e.target.attributes.bar)
     return (
       <>
         {e.target.attributes.name.value}
@@ -23,10 +23,23 @@ const Notes = ({ name, id, toggled}) => {
           onClick={handleClick} 
           name={name} 
           id={id}
+          bar={bar}
           style={{
-            background:onOff?"darkblue":"lightblue", 
-            color:onOff?"whitesmoke":"black"
-          }}>
+            background:
+            (
+              (onOff)?
+              (!(state===bar)?
+              "darkblue":"green"):(!(state===bar)?
+              "lightblue":"lightgreen")
+            ),
+            color:
+            (
+              (onOff)?
+              "whitesmoke":(!(state===bar)?
+              "black":"green")
+            )
+          }}
+          >
           {name}
         </button>
     </div>
