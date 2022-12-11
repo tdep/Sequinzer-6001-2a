@@ -20,6 +20,7 @@ const Stepper = ({ beats }) => {
     ['14', 400],
     ['15', 400]
   ]
+  
   let [state, api] = useSequencer({ steps, endMode: 'loop' })
   let currentBar = parseInt(state.current) + 1
   return (
