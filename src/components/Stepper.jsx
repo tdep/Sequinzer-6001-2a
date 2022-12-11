@@ -1,39 +1,37 @@
 import { useSequencer } from 'react-sequencer'
 import NoteArray from './Arrays'
 
-const steps = [
-  ['0', 500],
-  ['1', 500],
-  ['2', 500],
-  ['3', 500],
-  ['4', 500],
-  ['5', 500],
-  ['6', 500],
-  ['7', 500],
-  ['8', 500],
-  ['9', 500],
-  ['10', 500],
-  ['11', 500],
-  ['12', 500],
-  ['13', 500],
-  ['14', 500],
-  ['15', 500]
-]
-
-
-const Stepper = () => {
+const Stepper = ({ beats }) => {
+  const steps = [
+    ['0', 400],
+    ['1', 400],
+    ['2', 400],
+    ['3', 400],
+    ['4', 400],
+    ['5', 400],
+    ['6', 400],
+    ['7', 400],
+    ['8', 400],
+    ['9', 400],
+    ['10', 400],
+    ['11', 400],
+    ['12', 400],
+    ['13', 400],
+    ['14', 400],
+    ['15', 400]
+  ]
   let [state, api] = useSequencer({ steps, endMode: 'loop' })
-
+  let currentBar = parseInt(state.current) + 1
   return (
-    //console.log(state.current)
-
-    <div className="transport">
-      <p>{state.current}</p>
-      <button onClick={() => {api.play()}}>Start</button>
-      <button onClick={() => {api.pause()}}>Pause</button>
-      <button onClick={() => {api.stop()}}>Stop</button>
-      <NoteArray state={state.index} />
-    </div>
+    <>
+      <div className="transport">
+        <p>Bar: {currentBar}</p>
+        <button onClick={() => {api.play()}}>Start</button>
+        <button onClick={() => {api.pause()}}>Pause</button>
+        <button onClick={() => {api.stop()}}>Stop</button>
+        <NoteArray state={state.index} />
+      </div>
+    </>
   )
 }
 

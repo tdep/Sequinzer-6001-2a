@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Synths from './Synths'
 
 const Notes = ({ name, id, state, bar }) => {
   const [onOff, setOnOff] = useState(false)
@@ -24,6 +25,7 @@ const Notes = ({ name, id, state, bar }) => {
           name={name} 
           id={id}
           bar={bar}
+          ison={!onOff?"false":"true"}
           style={{
             background:
             (
