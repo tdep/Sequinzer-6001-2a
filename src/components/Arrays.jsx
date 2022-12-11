@@ -1,8 +1,6 @@
-import * as Tone from 'tone'
-import Synths from './Synths'
 import Notes from './Notes'
 
-const NoteArray = () => {
+const NoteArray = ({ toggled }) => {
     
 	const phrase = { 
 		grid: [ 
@@ -27,13 +25,14 @@ const NoteArray = () => {
 			{
 				column.map((bar, i) => {
 					return(
-						<div classname="column">
-							{row.map((pitch, j) => {
+						<div classname="column" bar={column[i]}>
+							{row.map((pitch) => {
 								return(
-									<div className="note">
+									<div className="note" note={pitch}>
 										<Notes 
 											name={pitch}
 											id={bar + pitch}
+											toggled={toggled}
 										/>
 									</div>
 								)

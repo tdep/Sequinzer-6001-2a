@@ -10,16 +10,18 @@
 
 .note {
   display: flex;
-  border: 1px solid black;
   height: 50px;
   width: 50px;
   justify-content: center;
   align-items: center;
-  background: lightblue;
 }
 
 .notes {
   color: whitesmoke;
+  border: 1px solid black;
+  background: lightblue;
+  height: 50px;
+  width: 50px;
 }
 
 .noteSpan {
