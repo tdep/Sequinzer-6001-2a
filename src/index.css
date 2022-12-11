@@ -1,0 +1,27 @@
+.play-field {
+  display: flex;
+  border: 1px solid black;
+}
+
+.column {
+  display: flex;
+  border: 1px solid black
+}
+
+.note {
+  display: flex;
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  background: lightblue;
+}
+
+.notes {
+  color: whitesmoke;
+}
+
+.noteSpan {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
