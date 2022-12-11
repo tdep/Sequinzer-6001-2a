@@ -33,3 +33,51 @@
   border: 1px solid black;
   background: lightblue;
 }
+
+.tempo {
+  border: 1px dashed black;
+  display: flex;
+  flex-grow: 1;
+  flex-direction:row;
+  flex-basis: 100px;
+  flex-shrink: 1;
+  gap: 5px;
+  justify-content: center;
+}
+
+.dial {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  position: absolute;
+}
+
+#tempo-control {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  cursor: grab;
+  -webkit-appearance: none;
+  background: transparent;
+  transform: rotate(270deg);
+  
+}
+
+#tempo-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 5px;
+  width: 5px;
+  background: transparent;
+  cursor: grab;
+  margin-top: -4px;
+}
+
+#tempo-dial {
+  transform: rotate(60deg);
+  display:flex;
+  position: relative;
+}
