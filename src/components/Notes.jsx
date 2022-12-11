@@ -5,9 +5,6 @@ import NoteButtons from './NoteButtons'
 const Notes = ({ name, id, state, bar }) => {
   const [onOff, setOnOff] = useState(false)
 
-
-  
-
   const handleClick = (e) => {
     e.preventDefault()
     setOnOff(!onOff)
@@ -26,7 +23,7 @@ const Notes = ({ name, id, state, bar }) => {
 
   return (
     <div>
-      {(state===bar && onOff)?Synths(name):console.log("off")}
+      {(state===bar && onOff)?Synths(name): null}
       <NoteButtons 
       handleClick={handleClick} 
       name={name} 

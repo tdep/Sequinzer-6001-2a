@@ -1,8 +1,9 @@
+import * as Tone from 'tone'
 import Stepper from "./Stepper"
 
 const Tempo = ({ useState }) => {
 
-  const [rate, setRate] = useState(60)
+  const [rate, setRate] = useState(120)
   const beats = (60 / rate) * 1000
 
   const slider = document.getElementById("tempo-control")
@@ -24,6 +25,7 @@ const Tempo = ({ useState }) => {
           <button onClick={()=> setRate(120)}>120 bpm</button>
           <button onClick={()=> setRate(400)}>400 bpm</button> */}
           {/* <p>{rate}</p> */}
+          {/* <tone-slider label="tempo" units="bpm" min="60" max="240" value="120"></tone-slider> */}
           <div className="dial">
             <img 
                 id="tempo-dial" 

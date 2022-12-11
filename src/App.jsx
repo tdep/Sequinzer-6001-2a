@@ -5,7 +5,7 @@ const App = () => {
 
 	return(
 		<div>
-			<Tempo useState={useState}/>
+			<Tempo useState={useState} />
 		</div>
 	)
 }
