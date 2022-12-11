@@ -11,9 +11,11 @@ const Notes = ({ name, id, toggled}) => {
       <>
         {e.target.attributes.name.value}
         {e.target.attributes.id.value}
+        {onOff}
       </>
     )
   }
+
   return (
     <div>
         <button 
@@ -21,7 +23,10 @@ const Notes = ({ name, id, toggled}) => {
           onClick={handleClick} 
           name={name} 
           id={id}
-          style={{background:onOff?"darkblue":"lightblue", color:onOff?"whitesmoke":"black"}}>
+          style={{
+            background:onOff?"darkblue":"lightblue", 
+            color:onOff?"whitesmoke":"black"
+          }}>
           {name}
         </button>
     </div>
