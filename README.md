@@ -10,4 +10,8 @@ fatal flaw where the audio engine is not permitted enough time to buffer so afte
 
 Future versions will address this and add other functionality. 
 
+To run:
+
+In root folder run `npm ci run dev`
+
 ![sequinzer_demo_2](https://user-images.githubusercontent.com/75575727/230392487-3f5ae89f-fa8c-4565-8172-0445a4a461a9.gif)
